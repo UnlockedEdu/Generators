@@ -52,10 +52,10 @@ def main():
 def baseConverter(num, x):
     ans = ""
     key = "0123456789ABCDEF"
-    while num < x:
+    while num >= x:
         ans = key[num % x] + ans
         num = num // x
-    return num + ans
+    return key[num] + ans
 
 
 # End of Helper Functions
@@ -71,44 +71,44 @@ def toBaseTen(difficulty):
         bases = [2, 8, 16]
         base = bases[random.randint(0, 2)]
         return (
-            baseConverter(random.randint(2, 32), base)
+            str(baseConverter(random.randint(2, 32), base))
             + "_"
-            + base
+            + str(base)
             + ' = "__________"_10'
         )
     elif difficulty == 2:
         bases = [2, 8, 16]
         base = bases[random.randint(0, 2)]
         return (
-            baseConverter(random.randint(2, 256), base)
+            str(baseConverter(random.randint(2, 256), base))
             + "_"
-            + base
+            + str(base)
             + ' = "__________"_10'
         )
     elif difficulty == 3:
         bases = [2, 4, 8, 16]
         base = bases[random.randint(0, 3)]
         return (
-            baseConverter(random.randint(2, 1024), base)
+            str(baseConverter(random.randint(2, 1024), base))
             + "_"
-            + base
+            + str(base)
             + ' = "__________"_10'
         )
     elif difficulty == 4:
         bases = [2, 4, 8, 12, 16]
         base = bases[random.randint(0, 4)]
         return (
-            baseConverter(random.randint(2, 32768), base)
+            str(baseConverter(random.randint(2, 32768), base))
             + "_"
-            + base
+            + str(base)
             + ' = "__________"_10'
         )
     elif difficulty == 5:
-        base = bases[random.randint(2, 16)]
+        base = random.randint(2, 16)
         return (
-            baseConverter(random.randint(2, 1048576), base)
+            str(baseConverter(random.randint(2, 1048576), base))
             + "_"
-            + base
+            + str(base)
             + ' = "__________"_10'
         )
 
@@ -123,15 +123,15 @@ def baseConversion(difficulty):
         base1 = bases[random.randint(0, 2)]
         base2 = bases[random.randint(0, 2)]
         return (
-            baseConverter(random.randint(2, 32), base1)
+            str(baseConverter(random.randint(2, 32), base1))
             + "_"
-            + base1
+            + str(base1)
             + " "
             + operators[random.randint(0, 1)]
             + " "
-            + baseConverter(randomInt(2, 32), base2)
+            + str(baseConverter(random.randint(2, 32), base2))
             + "_"
-            + base2
+            + str(base2)
             + ' = "__________"_10'
         )
     elif difficulty == 2:
@@ -140,15 +140,15 @@ def baseConversion(difficulty):
         base1 = bases[random.randint(0, 3)]
         base2 = bases[random.randint(0, 3)]
         return (
-            baseConverter(random.randint(2, 256), base1)
+            str(baseConverter(random.randint(2, 256), base1))
             + "_"
-            + base1
+            + str(base1)
             + " "
             + operators[random.randint(0, 1)]
             + " "
-            + baseConverter(randomInt(2, 256), base2)
+            + str(baseConverter(random.randint(2, 256), base2))
             + "_"
-            + base2
+            + str(base2)
             + ' = "__________"_10'
         )
     elif difficulty == 3:
@@ -157,15 +157,15 @@ def baseConversion(difficulty):
         base1 = bases[random.randint(0, 3)]
         base2 = bases[random.randint(0, 3)]
         return (
-            baseConverter(random.randint(2, 1024), base1)
+            str(baseConverter(random.randint(2, 1024), base1))
             + "_"
-            + base1
+            + str(base1)
             + " "
             + operators[random.randint(0, 3)]
             + " "
-            + baseConverter(randomInt(2, 32), base2)
+            + str(baseConverter(random.randint(2, 32), base2))
             + "_"
-            + base2
+            + str(base2)
             + ' = "__________"_10'
         )
     elif difficulty == 4:
@@ -175,20 +175,21 @@ def baseConversion(difficulty):
         base2 = bases[random.randint(0, 3)]
         base3 = bases[random.randint(0, 3)]
         return (
-            baseConverter(random.randint(2, 32768), base1)
+            str(baseConverter(random.randint(2, 32768), base1))
             + "_"
-            + base1
+            + str(base1)
             + " "
             + operators[random.randint(0, 3)]
             + " "
-            + baseConverter(randomInt(2, 32768), base2)
+            + str(baseConverter(random.randint(2, 32768), base2))
             + "_"
-            + base2
+            + str(base2)
+            + " "
             + operators[random.randint(0, 3)]
             + " "
-            + baseConverter(randomInt(2, 32768), base3)
+            + str(baseConverter(random.randint(2, 32768), base3))
             + "_"
-            + base3
+            + str(base3)
             + ' = "__________"_10'
         )
     else:
@@ -197,20 +198,21 @@ def baseConversion(difficulty):
         base2 = random.randint(2, 16)
         base3 = random.randint(2, 16)
         return (
-            baseConverter(random.randint(2, 1048576), base1)
+            str(baseConverter(random.randint(2, 1048576), base1))
             + "_"
-            + base1
+            + str(base1)
             + " "
             + operators[random.randint(0, 3)]
             + " "
-            + baseConverter(randomInt(2, 1048576), base2)
+            + str(baseConverter(random.randint(2, 1048576), base2))
             + "_"
-            + base2
+            + str(base2)
+            + " "
             + operators[random.randint(0, 3)]
             + " "
-            + baseConverter(randomInt(2, 1048576), base3)
+            + str(baseConverter(random.randint(2, 1048576), base3))
             + "_"
-            + base3
+            + str(base3)
             + ' = "__________"_10'
         )
 
@@ -226,39 +228,39 @@ def singleIfWkst(difficulty):
     if difficulty == 1:
         return (
             "if( "
-            + random.randint(-15, 15)
+            + str(random.randint(-15, 15))
             + " "
             + symbols[random.randint(0, 3)]
             + " "
-            + random.randint(-15, 15)
-            + ' )\n\t + out.println("Hello");'
+            + str(random.randint(-15, 15))
+            + ' )\n\tout.println("Hello");'
         )
     if difficulty == 2:
         return (
             "if( "
-            + random.randint(-15, 15)
+            + str(random.randint(-15, 15))
             + " "
             + symbols[random.randint(0, 3)]
             + " "
-            + random.randint(-15, 15)
-            + ' )\n\t + out.println("Hello");\nout.println("World");'
+            + str(random.randint(-15, 15))
+            + ' )\n\tout.println("Hello");\nout.println("World");'
         )
     if difficulty == 3:
         return (
             "int x = "
-            + random.randint(-15, 15)
+            + str(random.randint(-15, 15))
             + ";\nif( x "
             + symbols[random.randint(0, 3)]
             + " "
-            + random.randint(-15, 15)
+            + str(random.randint(-15, 15))
             + ' )\n\tout.println("Hello");\nout.println("World");'
         )
     if difficulty == 4:
         return (
             "int x = "
-            + random.randint(-15, 15)
-            + ";\n int y = "
-            + random.randint(-15, 15)
+            + str(random.randint(-15, 15))
+            + ";\nint y = "
+            + str(random.randint(-15, 15))
             + ";\nif( x "
             + symbols[random.randint(0, 3)]
             + ' y )\n\tout.println("Hello");\nout.println("World");'
@@ -267,19 +269,19 @@ def singleIfWkst(difficulty):
         operators = "+-*/"
         return (
             "int x = "
-            + random.randint(-15, 15)
-            + ";\n int y = "
-            + random.randint(-15, 15)
+            + str(random.randint(-15, 15))
+            + ";\nint y = "
+            + str(random.randint(-15, 15))
             + ";\nif( x "
             + operators[random.randint(0, 3)]
             + " "
-            + random.randint(-15, 15)
+            + str(random.randint(-15, 15))
             + " "
             + symbols[random.randint(0, 3)]
             + " y "
-            + operators[random.randint(0, 3)]
+            + str(operators[random.randint(0, 3)])
             + " "
-            + random.randint(-15, 15)
+            + str(random.randint(-15, 15))
             + ' )\n\tout.println("Hello");\nout.println("World");'
         )
 
@@ -296,39 +298,39 @@ def IfElseWkst(difficulty):
     if difficulty == 1:
         return (
             "if( "
-            + random.randint(-15, 15)
+            + str(random.randint(-15, 15))
             + " "
-            + symbols[random.randint(0, 3)]
+            + symbols[random.randint(0, 1)]
             + " "
-            + random.randint(-15, 15)
-            + ' )\n\t + out.println("Hello");\nelse\n\tout.println("World");'
+            + str(random.randint(-15, 15))
+            + ' )\n\tout.println("Hello");\nelse\n\tout.println("World");'
         )
     if difficulty == 2:
         return (
             "if( "
-            + random.randint(-15, 15)
+            + str(random.randint(-15, 15))
             + " "
-            + symbols[random.randint(0, 3)]
+            + symbols[random.randint(2, 3)]
             + " "
-            + random.randint(-15, 15)
-            + ' )\n\t + out.println("Hello");\nelse\n\tout.println("World");'
+            + str(random.randint(-15, 15))
+            + ' )\n\tout.println("Hello");\nelse\n\tout.println("World");'
         )
     if difficulty == 3:
         return (
             "int x = "
-            + random.randint(-15, 15)
+            + str(random.randint(-15, 15))
             + ";\nif( x "
             + symbols[random.randint(0, 3)]
             + " "
-            + random.randint(-15, 15)
+            + str(random.randint(-15, 15))
             + ' )\n\tout.println("Hello");\nelse\n\tout.println("World");'
         )
     if difficulty == 4:
         return (
             "int x = "
-            + random.randint(-15, 15)
-            + ";\n int y = "
-            + random.randint(-15, 15)
+            + str(random.randint(-15, 15))
+            + ";\nint y = "
+            + str(random.randint(-15, 15))
             + ";\nif( x "
             + symbols[random.randint(0, 3)]
             + ' y )\n\tout.println("Hello");\nelse\n\tout.println("World");'
@@ -337,19 +339,19 @@ def IfElseWkst(difficulty):
         operators = "+-*/"
         return (
             "int x = "
-            + random.randint(-15, 15)
-            + ";\n int y = "
-            + random.randint(-15, 15)
+            + str(random.randint(-15, 15))
+            + ";\nint y = "
+            + str(random.randint(-15, 15))
             + ";\nif( x "
             + operators[random.randint(0, 3)]
             + " "
-            + random.randint(-15, 15)
+            + str(random.randint(-15, 15))
             + " "
             + symbols[random.randint(0, 3)]
             + " y "
             + operators[random.randint(0, 3)]
             + " "
-            + random.randint(-15, 15)
+            + str(random.randint(-15, 15))
             + ' )\n\tout.println("Hello");\nelse\n\tout.println("World");'
         )
 
@@ -368,55 +370,55 @@ def IfElseIfElseWkst(difficulty):
     if difficulty == 1:
         return (
             "if( "
-            + random.randint(-15, 15)
+            + str(random.randint(-15, 15))
             + " "
             + symbols[random.randint(0, 3)]
             + " "
-            + random.randint(-15, 15)
-            + ' )\n\t + out.println("Hello");\nelse if( '
-            + random.randint(-15, 15)
+            + str(random.randint(-15, 15))
+            + ' )\n\tout.println("Hello");\nelse if( '
+            + str(random.randint(-15, 15))
             + " "
             + symbols[random.randint(0, 3)]
             + " "
-            + random.randint(-15, 15)
-            + ' )\n\t + out.println("Kind");\nelse\n\tout.println("World");'
+            + str(random.randint(-15, 15))
+            + ' )\n\tout.println("Kind");\nelse\n\tout.println("World");'
         )
     if difficulty == 2:
         return (
             "if( "
-            + random.randint(-15, 15)
+            + str(random.randint(-15, 15))
             + " "
             + symbols[random.randint(0, 3)]
             + " "
-            + random.randint(-15, 15)
-            + ' )\n\t + out.println("Hello");\nelse if( '
-            + random.randint(-15, 15)
+            + str(random.randint(-15, 15))
+            + ' )\n\tout.println("Hello");\nelse if( '
+            + str(random.randint(-15, 15))
             + " "
             + symbols[random.randint(0, 3)]
             + " "
-            + random.randint(-15, 15)
-            + ' )\n\t + out.println("Kind");\nelse\n\tout.println("World");'
+            + str(random.randint(-15, 15))
+            + ' )\n\tout.println("Kind");\nelse\n\tout.println("World");'
         )
     if difficulty == 3:
         return (
             "int x = "
-            + random.randint(-15, 15)
+            + str(random.randint(-15, 15))
             + ";\nif( x "
             + symbols[random.randint(0, 3)]
             + " "
-            + random.randint(-15, 15)
+            + str(random.randint(-15, 15))
             + ' )\n\tout.println("Hello");\nelse if( x '
             + symbols[random.randint(0, 3)]
             + " "
-            + random.randint(-15, 15)
+            + str(random.randint(-15, 15))
             + ' )\n\tout.println("Kind");\nelse\n\tout.println("World");'
         )
     if difficulty == 4:
         return (
             "int x = "
-            + random.randint(-15, 15)
-            + ";\n int y = "
-            + random.randint(-15, 15)
+            + str(random.randint(-15, 15))
+            + ";\nint y = "
+            + str(random.randint(-15, 15))
             + ";\nif( x "
             + symbols[random.randint(0, 3)]
             + ' y )\n\tout.println("Hello");\nelse if( x '
@@ -427,29 +429,29 @@ def IfElseIfElseWkst(difficulty):
         operators = "+-*/"
         return (
             "int x = "
-            + random.randint(-15, 15)
-            + ";\n int y = "
-            + random.randint(-15, 15)
+            + str(random.randint(-15, 15))
+            + ";\nint y = "
+            + str(random.randint(-15, 15))
             + ";\nif( x "
             + operators[random.randint(0, 3)]
             + " "
-            + random.randint(-15, 15)
+            + str(random.randint(-15, 15))
             + " "
             + symbols[random.randint(0, 3)]
             + " y "
             + operators[random.randint(0, 3)]
             + " "
-            + random.randint(-15, 15)
+            + str(random.randint(-15, 15))
             + ' )\n\tout.println("Hello");\nelse if( x '
             + operators[random.randint(0, 3)]
             + " "
-            + random.randint(-15, 15)
+            + str(random.randint(-15, 15))
             + " "
             + symbols[random.randint(0, 3)]
             + " y "
             + operators[random.randint(0, 3)]
             + " "
-            + random.randint(-15, 15)
+            + str(random.randint(-15, 15))
             + ' )\n\tout.println("Kind");\nelse\n\tout.println("World");'
         )
 
@@ -475,8 +477,8 @@ def StringMethodProblems(difficulty):
     ]
     alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
     if difficulty == 1:
-        word = str(
-            [alphabet[random.randint(0, 52)] for x in range(random.randint(1, 7))]
+        word = ''.join(
+            [alphabet[random.randint(0, 51)] for x in range(random.randint(1, 7))]
         )
         command = commands[random.randint(0, 1)]
         return (
@@ -487,50 +489,78 @@ def StringMethodProblems(difficulty):
             + ");\nout.println(word);"
         )
     if difficulty == 2:
-        word = str(
-            [alphabet[random.randint(0, 52)] for x in range(random.randint(1, 12))]
+        word = ''.join(
+            [alphabet[random.randint(0, 51)] for x in range(random.randint(1, 20))]
         )
         command = commands[random.randint(2, 4)]
-        return (
-            'String word = "'
-            + word
-            + '";\nword = word.'
-            + command
-            + ");\nout.println(word);"
-        )
+        if command == "charAt(":
+        	return (
+            	'String word = "'
+            	+ word
+            	+ '";\nword = word.'
+            	+ command
+            	+ str(random.randint(0, len(word)))
+            	+ ");\nout.println(word);"
+        	)
+        else:
+        	return (
+            	'String word = "'
+            	+ word
+            	+ '";\nword = word.'
+            	+ command
+            	+ word[random.randint(0, len(word)-1)]
+            	+ ");\nout.println(word);"
+        	)
     if difficulty == 3:
-        word = str(
-            [phabet[random.randint(0, 52)] for x in range(random.randint(1, 18))]
+        word = ''.join(
+            [alphabet[random.randint(0, 51)] for x in range(random.randint(1, 18))]
         )
-        command = commands[random.radInt(5, 6)]
-        return (
-            'String word = "'
-            + word
-            + '";\nword = word.'
-            + command
-            + ");\nout.println(word);"
-        )
+        command = commands[random.randint(5, 6)]
+        if command == "remove(":
+        	return (
+            	'String word = "'
+            	+ word
+            	+ '";\nword = word.'
+            	+ command
+            	+ "\""
+            	+ word[random.randint(0,len(word)-1)]
+            	+ "\""
+            	+ ");\nout.println(word);"
+        	)
+        else:
+        	return (
+            	'String word = "'
+            	+ word
+            	+ '";\nword = word.'
+            	+ command
+            	+ "\""
+            	+ word[random.randint(0,len(word)-1)]
+            	+ "\""
+            	+ ", \"trick\""
+            	+ ");\nout.println(word);"
+        	)
     if difficulty == 4:
-        word = str(
-            [alphabet[random.randint(0, 52)] for x in range(random.randint(1, 26))]
+        word = ''.join(
+            [alphabet[random.randint(0, 51)] for x in range(random.randint(1, 26))]
         )
         return (
             'String word = "'
             + word
             + '";\nword = word.substring('
-            + 7
+            + str(random.randint(0, len(word)))
             + ");\nout.println(word);"
         )
     if difficulty == 5:
-        word = str(
-            [alphabet[random.randint(0, 52)] for x in range(random.randint(1, 7))]
+        word = ''.join(
+            [alphabet[random.randint(0, 51)] for x in range(random.randint(2, 18))]
         )
-        command = commands[random.randint(0, 7)]
         return (
             'String word = "'
             + word
-            + '";\nword = word.'
-            + command
+            + '";\nword = word.substring('
+            + str(random.randint(0, len(word)//2))
+            + ", "            
+            + str(random.randint(len(word)//2, len(word)))
             + ");\nout.println(word);"
         )
 
