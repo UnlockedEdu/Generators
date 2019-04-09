@@ -25,7 +25,8 @@ def main():
 			"\n" + typeDict[outputType](difficulty) + "\n"
 		)
 		returner += str(a) + " " + temp
-		f.write(out.runner(temp))
+		ans = out.runner(temp, outputType)
+		f.write(ans[1:].replace("\'",""))
 	f.close()
 	f=open("questions.txt","w")
 	f.write(returner)

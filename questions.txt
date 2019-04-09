@@ -1,50 +1,20 @@
 0 
-int x = -15;
-if( x == 8 )
-	out.println("Hello");
-out.println("World");
+10110110_2 - 10101101_2 = "__________"_10
 1 
-int x = -7;
-if( x == -4 )
-	out.println("Hello");
-out.println("World");
+357_8 - 233_10 = "__________"_10
 2 
-int x = 13;
-if( x < 12 )
-	out.println("Hello");
-out.println("World");
+240_10 + 170_10 = "__________"_10
 3 
-int x = -14;
-if( x > -3 )
-	out.println("Hello");
-out.println("World");
+B6_16 + 100000_2 = "__________"_10
 4 
-int x = -1;
-if( x == -12 )
-	out.println("Hello");
-out.println("World");
+355_8 - 22_16 = "__________"_10
 5 
-int x = -10;
-if( x > 7 )
-	out.println("Hello");
-out.println("World");
+1001000_2 - 60_8 = "__________"_10
 6 
-int x = 6;
-if( x != -14 )
-	out.println("Hello");
-out.println("World");
+1C_16 + 2_16 = "__________"_10
 7 
-int x = -11;
-if( x < -3 )
-	out.println("Hello");
-out.println("World");
+1001000_2 - 3_8 = "__________"_10
 8 
-int x = 1;
-if( x < 12 )
-	out.println("Hello");
-out.println("World");
+11001111_2 + 1101010_2 = "__________"_10
 9 
-int x = 8;
-if( x != 1 )
-	out.println("Hello");
-out.println("World");
+1000011_2 - 1F_16 = "__________"_10
