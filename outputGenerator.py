@@ -2,14 +2,7 @@ import os.path, subprocess
 from subprocess import STDOUT, PIPE
 
 
-def main():
-    inputCode = (
-        "int x = 8;\n"
-        + "int y = -1;\n"
-        + "if( x / -6 != y + 5 )\n"
-        + '\tout.println("Hello");\n'
-        + 'out.println("World");'
-    )
+def runner(inputCode):
     inputCode = inputCode.replace("\n", "\n\t\t")
     f = open("tester.java", "w")
     testSkeleton = (
@@ -29,10 +22,7 @@ def main():
     f.write(testSkeleton)
     f.close()
     compile_java("tester.java")
-    answer = execute_java("tester.java")
-    f = open("answers.txt", "a")
-    f.write(answer)
-    f.close()
+    return execute_java("tester.java")
 
 
 def compile_java(java_file):
@@ -45,7 +35,3 @@ def execute_java(java_file):
     proc = subprocess.Popen(cmd, stdin=PIPE, stdout=PIPE, stderr=STDOUT)
     stdout, stderr = proc.communicate()
     return str(stdout)
-
-
-if __name__ == "__main__":
-    main()

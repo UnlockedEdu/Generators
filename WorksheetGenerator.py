@@ -14,39 +14,6 @@ import random
 # Learn how I will be retrieving data(not a priority)
 
 
-def main():
-    returner = ""
-    typeDict = {
-        0: toBaseTen,
-        1: baseConversion,
-        2: singleIfWkst,
-        3: IfElseWkst,
-        4: IfElseIfElseWkst,
-        5: StringMethodProblems,
-        6: classProblems,
-        7: arrayIteration,
-        8: simpleRecur
-    }
-    containsInput = True
-    counter = 1
-    while counter == 1:
-        problemType = 6
-        diff = 1
-        amount = 50
-        # this should do the format
-        # 1.
-        # Problem
-        #
-        # 2.
-        # Problem
-        for i in range(amount):
-            returner += (
-                str(counter) + ".\n" + typeDict[problemType](difficulty=diff) + "\n"
-            )
-            counter += 1
-    print(returner)
-
-
 # Begining of Helper Functions
 # a function that allows me to convert a number from base 10 to base x(2-16) because apparently python doesn't have this already?
 def baseConverter(num, x):

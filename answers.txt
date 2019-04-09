@@ -1,1 +1,10 @@
-b'Hello\nWorld\n'
+b'World\n
+'b'World\n
+'b'World\n
+'b'World\n
+'b'World\n
+'b'World\n
+'b'Hello\nWorld\n
+'b'Hello\nWorld\n
+'b'Hello\nWorld\n
+'b'Hello\nWorld\n'
