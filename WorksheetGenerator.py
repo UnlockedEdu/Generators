@@ -118,7 +118,6 @@ def toBaseTen(difficulty):
 # X1_Y1 (+-*/) X2_Y2 = "______"_10
 def baseConversion(difficulty):
     if difficulty == 1:
-        operators = "+-"
         bases = [2, 8, 10]
         base1 = bases[random.randint(0, 2)]
         base2 = bases[random.randint(0, 2)]
@@ -127,7 +126,7 @@ def baseConversion(difficulty):
             + "_"
             + str(base1)
             + " "
-            + operators[random.randint(0, 1)]
+            + "+"
             + " "
             + str(baseConverter(random.randint(2, 32), base2))
             + "_"
@@ -139,14 +138,16 @@ def baseConversion(difficulty):
         bases = [2, 8, 10, 16]
         base1 = bases[random.randint(0, 3)]
         base2 = bases[random.randint(0, 3)]
+        num1 = random.randint(2, 256)
+        num2 = random.randint(2, num1)
         return (
-            str(baseConverter(random.randint(2, 256), base1))
+            str(baseConverter(num1, base1))
             + "_"
             + str(base1)
             + " "
             + operators[random.randint(0, 1)]
             + " "
-            + str(baseConverter(random.randint(2, 256), base2))
+            + str(baseConverter(num2, base2))
             + "_"
             + str(base2)
             + ' = "__________"_10'
@@ -156,14 +157,16 @@ def baseConversion(difficulty):
         bases = [2, 8, 10, 16]
         base1 = bases[random.randint(0, 3)]
         base2 = bases[random.randint(0, 3)]
+        num1 = random.randint(2, 1024)
+        num2 = random.randint(2, num1)
         return (
-            str(baseConverter(random.randint(2, 1024), base1))
+            str(baseConverter(num1, base1))
             + "_"
             + str(base1)
             + " "
             + operators[random.randint(0, 3)]
             + " "
-            + str(baseConverter(random.randint(2, 32), base2))
+            + str(baseConverter(num2, base2))
             + "_"
             + str(base2)
             + ' = "__________"_10'
@@ -174,20 +177,23 @@ def baseConversion(difficulty):
         base1 = bases[random.randint(0, 3)]
         base2 = bases[random.randint(0, 3)]
         base3 = bases[random.randint(0, 3)]
+        num1 = random.randint(2, 32768)
+        num2 = random.randint(2, num1)
+        num3 = random.randint(2, num2)
         return (
-            str(baseConverter(random.randint(2, 32768), base1))
+            str(baseConverter(num1, base1))
             + "_"
             + str(base1)
             + " "
-            + operators[random.randint(0, 3)]
+            + "+"
             + " "
-            + str(baseConverter(random.randint(2, 32768), base2))
+            + str(baseConverter(num2, base2))
             + "_"
             + str(base2)
             + " "
             + operators[random.randint(0, 3)]
             + " "
-            + str(baseConverter(random.randint(2, 32768), base3))
+            + str(baseConverter(num3, base3))
             + "_"
             + str(base3)
             + ' = "__________"_10'
@@ -197,20 +203,23 @@ def baseConversion(difficulty):
         base1 = random.randint(2, 16)
         base2 = random.randint(2, 16)
         base3 = random.randint(2, 16)
+        num1 = random.randint(2, 1048576)
+        num2 = random.randint(2, num1)
+        num3 = random.randint(2, num2)
         return (
-            str(baseConverter(random.randint(2, 1048576), base1))
+            str(baseConverter(num1, base1))
             + "_"
             + str(base1)
             + " "
-            + operators[random.randint(0, 3)]
+            + "+"
             + " "
-            + str(baseConverter(random.randint(2, 1048576), base2))
+            + str(baseConverter(num2, base2))
             + "_"
             + str(base2)
             + " "
             + operators[random.randint(0, 3)]
             + " "
-            + str(baseConverter(random.randint(2, 1048576), base3))
+            + str(baseConverter(num3, base3))
             + "_"
             + str(base3)
             + ' = "__________"_10'
