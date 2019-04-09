@@ -148,26 +148,51 @@ class MyUnitTests(TestCase):
 	def test_StringMethodProblems_dif5(self):
 		print("%%%%%% StringMethodProblems dif 5 %%%%%%")
 		print("\n" + generator.StringMethodProblems(5) +"\n")
-"""
+
 
 	def test_classProblems_dif1(self):
-		pass
+		try:
+			generator.classProblems(1)
+			assert False
+		except:
+			assert True
 	def test_classProblems_dif2(self):
-		pass
+		try:
+			generator.classProblems(2)
+			assert False
+		except:
+			assert True
 	def test_classProblems_dif3(self):
-		pass
+		try:
+			generator.classProblems(3)
+			assert False
+		except:
+			assert True
 	def test_classProblems_dif4(self):
-		pass
+		try:
+			generator.classProblems(4)
+			assert False
+		except:
+			assert True
 	def test_classProblems_dif5(self):
-		pass
+		try:
+			generator.classProblems(5)
+			assert False
+		except:
+			assert True
 
 
 	def test_arrayIteration_dif1(self):
-		pass
+		print("%%%%%% arrayIteration dif 1 %%%%%%")
+		print("\n" + generator.arrayIteration(1) +"\n")
+
 	def test_arrayIteration_dif2(self):
-		pass
+		print("%%%%%% arrayIteration dif 2 %%%%%%")
+		print("\n" + generator.arrayIteration(2) +"\n")
 	def test_arrayIteration_dif3(self):
-		pass
+		print("%%%%%% arrayIteration dif 3 %%%%%%")
+		print("\n" + generator.arrayIteration(3) +"\n")
+"""
 	def test_arrayIteration_dif4(self):
 		pass
 	def test_arrayIteration_dif5(self):

@@ -587,20 +587,42 @@ def classProblems(difficulty):
 # 	out.println(arr[x]);
 def arrayIteration(difficulty):
     if difficulty == 1:
+        operands = ["+", "-"]
+        return (
+            "int [] arr = new int["
+            + str(random.randint(1, 8))
+            + "];\nfor(int x = 0; x < arr.length; x++)\n\tarr[x] = x "
+            + operands[random.randint(0,1)]
+            + " "
+            + str(random.randint(1, 5))
+            + ";\nfor(int x = 0; x < arr.length; x++)\n\tout.println(arr[x]);"
+        )
+    if difficulty == 2:
         operands = ["+", "-", "/", "*"]
         return (
             "int [] arr = new int["
-            + random.randint(1, 8)
-            + "];\nfor(int x = 0; x < arr.length; x++)\n\tarr[x] = arr[x "
-            + operands[random.randint()]
+            + str(random.randint(1, 8))
+            + "];\nfor(int x = 0; x < arr.length; x++)\n\tarr[x] = x "
+            + operands[random.randint(0,3)]
             + " "
-            + random.randint(1, 5)
-            + "];\nfor(int x = 0; x < arr.length; x++)\n\tout.println(arr[x]);"
+            + str(random.randint(1, 5))
+            + ";\nfor(int x = 0; x < arr.length; x++)\n\tout.println(arr[x]);"
         )
-    if difficulty == 2:
-        pass
     if difficulty == 3:
-        pass
+        operands = ["+", "-", "/", "*"]
+        return (
+            "int [] arr = new int["
+            + str(random.randint(1, 8))
+            + "];\nfor(int x = 0; x < arr.length; x++)\n\tarr[x] = x "
+            + operands[random.randint(0,3)]
+            + " "
+            + str(random.randint(1, 5))
+            + ";\nfor(int x = 0; x < arr.length/2; x++)\n\tarr[x] += x "
+            + operands[random.randint(0,3)]
+            + " "
+            + str(random.randint(-2, 5))
+            + ";\nfor(int x = 0; x < arr.length; x++)\n\tout.println(arr[x]);"
+        )
     if difficulty == 4:
         pass
     if difficulty == 5:
