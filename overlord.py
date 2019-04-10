@@ -18,15 +18,40 @@ def main():
 		7: wkst.arrayIteration,
 		8: wkst.simpleRecur
 	}
+	methods= ""
+	methodCallers=""
 	temp = ""
+	ans = ""
 	f = open("answers.txt", "w")
+	compiler = open("tester.java", "w")
 	for a in range(amount):
 		temp = (
 			"\n" + typeDict[outputType](difficulty) + "\n"
 		)
 		returner += str(a) + " " + temp
-		ans = out.runner(temp, outputType)
-		f.write(ans[1:].replace("\'",""))
+		temp = out.runner(temp, outputType)
+		methods += "public static void method" + str(a) + "()\n{\n\t" + temp + "}"
+		methodCallers += "method" + str(a) + "();\n"
+		
+	testSkeleton = (
+		"import static java.lang.System.*;\n"
+		+ "import java.util.*;\n"
+		+ "import java.io.*;\n\n"
+		+ "public class tester \n"
+		+ "{\n"
+		+ "\tpublic static void main(String[]args)\n"
+		+ "\t{\n"
+		+ "\t\t "
+		+ methodCallers
+		+ "\n"
+		+ "\t}\n"
+		+ methods
+		+ "}"
+	)
+	compiler.write(testSkeleton)
+	compiler.close()
+	out.compile_java("tester.java")
+	f.write(out.execute_java("tester.java"))
 	f.close()
 	f=open("questions.txt","w")
 	f.write(returner)

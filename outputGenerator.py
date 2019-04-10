@@ -6,26 +6,7 @@ def runner(inputCode, number):
     
     if number <= 1:
     	inputCode = parser(inputCode)
-    inputCode = inputCode.replace("\n", "\n\t\t")
-    f = open("tester.java", "w")
-    testSkeleton = (
-        "import static java.lang.System.*;\n"
-        + "import java.util.*;\n"
-        + "import java.io.*;\n\n"
-        + "public class tester \n"
-        + "{\n"
-        + "\tpublic static void main(String[]args)\n"
-        + "\t{\n"
-        + "\t\t "
-        + inputCode
-        + "\n"
-        + "\t}\n"
-        + "}"
-    )
-    f.write(testSkeleton)
-    f.close()
-    compile_java("tester.java")
-    return execute_java("tester.java")
+    return inputCode
 
 
 def compile_java(java_file):
