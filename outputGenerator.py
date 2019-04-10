@@ -3,9 +3,9 @@ from subprocess import STDOUT, PIPE
 
 
 def runner(inputCode, number):
-    
+
     if number <= 1:
-    	inputCode = parser(inputCode)
+        inputCode = parser(inputCode)
     return inputCode
 
 
@@ -46,11 +46,11 @@ def parser(inputCode):
         number = parsed[start].split("_")
         total = baseSolver(number[0], eval(number[1]))
         if start != 0:
-        	myList.append(parsed[start - 1])
+            myList.append(parsed[start - 1])
         myList.append(total)
         start += 2
     code = "out.println("
     for a in myList:
-    	code += str(a) + " "
+        code += str(a) + " "
     code += ");\n"
     return code
