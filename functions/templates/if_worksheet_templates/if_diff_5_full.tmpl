@@ -1,0 +1,6 @@
+{% extends "JavaRunner.tmpl" %}
+{% block main %}int {{ code.variable_one }} = {{ code.value_one }};
+		int {{ code.variable_two }} = {{ code.value_two}};
+		if( {{ code.variable_one }} {{ code.operator_one }} {{ code.random_val_one }} {{ code.condition }} {{ code.variable_two }} {{ code.operator_two }} {{ code.random_val_two }})
+			System.out.println("{{ code.word_true }}");
+		System.out.println("{{ code.word_false }}");{% endblock main %}

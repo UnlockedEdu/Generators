@@ -1,0 +1,5 @@
+{% extends "JavaRunner.tmpl" %}
+{% block main %}int {{ code.variable_name }} = {{ code.variable_value }};
+		if( {{ code.variable_name }} {{ code.condition }} {{ code.comparative_value }})
+			System.out.println("{{ code.word_true }}");
+		System.out.println("{{ code.word_false }}");{% endblock main %}
