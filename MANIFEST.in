@@ -1,0 +1,2 @@
+include Pipfile
+recursive-include code_generators/templates *.tmpl
